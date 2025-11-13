@@ -23,7 +23,7 @@ const Dashboard = () => {
       <h2>Welcome, {session?.user?.user_metadata?.name}</h2>
       <p>{session?.user?.id}</p>
       
-      <UserBalance session={session} />
+      <UserBalance session={session}  />
 
       <div>
         <p
