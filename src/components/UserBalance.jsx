@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../supabaseClient"; // passe den Pfad ggf. an
+import { supabase } from "../supabaseClient";
 
 export default function UserBalance({ session }) {
   const [balance, setBalance] = useState(null);
@@ -24,7 +24,7 @@ export default function UserBalance({ session }) {
 
     // 2️⃣ Echtzeit-Update aktivieren
     const channel = supabase
-      .channel("balance-updates")
+      .channel("balance-updates-${userId}")
       .on(
         "postgres_changes",
         {
